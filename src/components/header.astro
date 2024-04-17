@@ -1,27 +1,25 @@
 ---
 import { Icon } from "astro-icon/components";
-import ThemeSwitcher from "~/components/theme-switcher.astro";
+// import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
 const navItems: Array<NavItem> = [
-  { title: "Features", url: "#features" },
-  { title: "Compatibility", url: "#compatibility" },
-  { title: "Showcase", url: "#showcase" },
+  { title: "Home", url: "#home" },
+  { title: "About", url: "#about" },
+  { title: "Docs", url: "#docs" },
 ];
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class="absolute flex w-full justify-between bg-gradient-to-b from-[#071C27] to-transparent top-0 z-20  border-transparent px-8 py-4 text-white"
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
-    <h1 class="sr-only">Astro</h1>
-    <Icon name="logomark" class="size-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
+    <img class="max-w-[206px]" src="/logo.png" alt="">
   </a>
   <div>
-    <div class="flex items-center gap-6">
-      <nav class="hidden sm:block">
+    <div class="flex items-center justify-between gap-6">
+      <nav class="sm:hidden block">
         <ul class="flex items-center gap-6">
           {
             navItems.map(({ title, url }) => (
@@ -37,13 +35,13 @@ const navItems: Array<NavItem> = [
       <button
         id="open-nav-button"
         type="button"
-        class="btn sm:hidden"
+        class="btn hidden sm:block"
         aria-label="Navigation"
       >
         <Icon name="mdi:menu" class="size-8" />
       </button>
-      <ThemeSwitcher />
     </div>
+
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
       <div class="fixed inset-0 bg-default px-8 py-4 text-default">
         <div class="space-y-4" role="dialog" aria-modal="true">
@@ -77,6 +75,7 @@ const navItems: Array<NavItem> = [
       </div>
     </div>
   </div>
+  <div>lang</div>
 </header>
 
 <script>

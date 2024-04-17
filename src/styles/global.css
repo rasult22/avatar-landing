@@ -1,12 +1,18 @@
-/* TODO: consider creating <Button> and <GradientText> components */
-a,
-.btn {
-  @apply transition-colors duration-200;
-  @apply hover:text-secondary;
-  @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent;
+body {
+  font-family: "Poppins";
 }
-
-.gradient-text {
-  @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+.app-black-gradient-bg {
+  background: linear-gradient(180deg, #071c27 0%, #181717 91.12%);
+}
+.app-gradient-bg {
+  background: linear-gradient(90deg, #0b63f6 0%, #063a90 100%);
+}
+.app-border-gradient-bg {
+  background: linear-gradient(90deg, #0B63F6 0%, #9F87FF 43%, #08D5EC 73%, #41F892 100%);
+}
+.app-text-gradient-bg {
+  background: linear-gradient(90deg, #2b43f7 5.84%, #00c9fb 63.5%, #45fa8e 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

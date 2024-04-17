@@ -8,8 +8,14 @@ module.exports = {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
       },
       colors: {
+        'app-bg': '#091720',
+        'app-bg-2': '#0B3D5D',
+        'app-grey-text': '#DBE2EA',
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
+      },
+      boxShadow: {
+        'layout': '0 -1px 3px 0 rgba(7, 10, 14, 0.8);'
       },
       textColor: {
         default: "var(--color-text)",
@@ -22,10 +28,13 @@ module.exports = {
       borderColor: {
         default: "var(--color-border)",
       },
+      screens: {
+        "custom-screen": { raw: "(max-height: 670px)" },
+        lg: { min: "1200px" },
+        md: { max: "1200px", min: "700px" },
+        sm: { max: "700px", min: "0px" },
+      },
     },
-  },
-  corePlugins: {
-    fontSize: false,
   },
   plugins: [require("tailwindcss-fluid-type")],
 };
