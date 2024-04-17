@@ -15,7 +15,12 @@ module.exports = {
         secondary: "var(--color-secondary)",
       },
       boxShadow: {
-        'layout': '0 -1px 3px 0 rgba(7, 10, 14, 0.8);'
+        'layout': '0 -1px 3px 0 rgba(7, 10, 14, 0.8);',
+        'card': '0 0 36px 0 #1da1f2;'
+      },
+      fontFamily: {
+        Inter: ["Inter Variable"],
+        Poppins: ["Poppins"],
       },
       textColor: {
         default: "var(--color-text)",

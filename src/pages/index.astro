@@ -6,6 +6,8 @@ import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
 import Intro from '~/components/blocks/intro.astro'
 import WhatIs from '~/components/blocks/what-is.astro'
+import Assistant from '~/components/blocks/assistant.astro'
+import Companion from '~/components/blocks/companion.astro'
 
 const { generator, site } = Astro;
 const image = new URL("social.jpg", site);
@@ -63,6 +65,8 @@ const description =
     <div>
       <Intro />
       <WhatIs />
+      <Assistant />
+      <Companion />
     </div>
     <Footer />
   </body>

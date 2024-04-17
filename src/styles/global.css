@@ -1,5 +1,5 @@
 body {
-  font-family: "Poppins";
+  font-family: "Inter Variable";
 }
 .app-black-gradient-bg {
   background: linear-gradient(180deg, #071c27 0%, #181717 91.12%);
@@ -15,4 +15,8 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.app-glass-bg {
+  backdrop-filter: blur(51.98776626586914px);
+  background: rgba(20, 26, 33, 0.48);
 }
