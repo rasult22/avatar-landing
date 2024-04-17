@@ -11,6 +11,7 @@ module.exports = {
         'app-bg': '#091720',
         'app-bg-2': '#0B3D5D',
         'app-grey-text': '#DBE2EA',
+        'app-border': 'linear-gradient(90deg, #0B63F6 0%, #9F87FF 43%, #08D5EC 73%, #41F892 100%);',
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
       },
