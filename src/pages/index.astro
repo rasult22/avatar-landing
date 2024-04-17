@@ -8,6 +8,7 @@ import Intro from '~/components/blocks/intro.astro'
 import WhatIs from '~/components/blocks/what-is.astro'
 import Assistant from '~/components/blocks/assistant.astro'
 import Companion from '~/components/blocks/companion.astro'
+import Roadmap from '~/components/blocks/roadmap.astro'
 
 const { generator, site } = Astro;
 const image = new URL("social.jpg", site);
@@ -67,6 +68,7 @@ const description =
       <WhatIs />
       <Assistant />
       <Companion />
+      <Roadmap />
     </div>
     <Footer />
   </body>
