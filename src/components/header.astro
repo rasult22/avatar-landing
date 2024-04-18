@@ -2,6 +2,8 @@
 import { Icon } from "astro-icon/components";
 // import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
+import LangSelector from '~/components/lang-selector.svelte'
+import Login from '~/components/login.svelte'
 
 const navItems: Array<NavItem> = [
   { title: "Home", url: "#home" },
@@ -75,7 +77,14 @@ const navItems: Array<NavItem> = [
       </div>
     </div>
   </div>
-  <div>lang</div>
+  <div class="flex space-x-4 items-center">
+    <div>
+      <LangSelector client:idle />
+    </div>
+    <div>
+      <Login client:idle />
+    </div>
+  </div>
 </header>
 
 <script>
