@@ -3,6 +3,28 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}"],
   theme: {
+    backgroundSize: {
+      'auto': 'auto',
+      'cover': 'cover',
+      'contain': 'contain',
+      '250%': '200%',
+      '16': '4rem',
+    },
+    backgroundPosition: {
+      'p-100%': '100%',
+      'p-50%': '50%',
+      bottom: 'bottom',
+      'bottom-4': 'center bottom 1rem',
+      center: 'center',
+      left: 'left',
+      'left-bottom': 'left bottom',
+      'left-top': 'left top',
+      right: 'right',
+      'right-bottom': 'right bottom',
+      'right-top': 'right top',
+      top: 'top',
+      'top-4': 'center top 1rem',
+    },
     extend: {
       fontFamily: {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],

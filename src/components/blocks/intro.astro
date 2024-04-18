@@ -3,17 +3,20 @@
 // import ContentSection from "~/components/content-section.astro";
 ---
 
-<div class="bg-[url(/bg.png)] relative px-10 pt-[520px] pb-[240px] bg-cover bg-center min-h-[800px] flex items-end">
-  <div class="space-y-[40px]">
-    <div class="min-h-[100px] font-Poppins max-w-[644px] font-semibold text-white text-[64px] leading-[75px]">
+<div class="bg-[url(/bg.png)] sm:bg-[url(/bg-sm.png)] relative px-10 pt-[520px] pb-[240px] md:pb-[140px] sm:pb-[130px] bg-cover bg-center md:bg-p-100% min-h-[800px] flex items-end">
+  <div class="z-[1] space-y-[40px] md:space-y-[16px] sm:space-y-[16px]">
+    <div class=" min-h-[100px] sm:min-h-[30px] font-Poppins max-w-[644px] md:max-w-[500px] font-semibold text-white text-[64px] md:text-[48px] sm:text-[32px] leading-[75px] md:leading-[56px] sm:leading-[40px]">
       <span class="app-text-gradient-bg text-transparent bg-clip-text">CompAI</span> – your best
 AI generated friend
     </div>
-    <div class="max-w-[600px]">
+    <div class="max-w-[600px] md:text-[17px]">
       AI based communication voice avatars, which can be used as different professional assistants – psychologist, fitness coach, nutrition counselor, Wide range of topics communicating Companion
     </div>
   </div>
-  <div class="absolute bottom-0 rounded-t-[48px] shadow-layout left-0 w-full bg-app-bg h-[100px]">
+  <div class="opacity-0 md:opacity-100 sm:opacity-100 sm:md:opacity-100 absolute left-0 w-full h-[100px] bottom-[80px] sm:bottom-[90px] bg-gradient-to-t from-[#091720] to-transparent"></div>
+  <div class="absolute app-border-gradient-bg bottom-0 pt-[1px] md:pt-[2px] px-[0px] overflow-hidden rounded-t-[48px] md:rounded-t-[24px] sm:rounded-t-[16px] shadow-layout left-0 w-full h-[100px]">
+    <div class="bg-app-bg w-full h-full rounded-t-[48px] md:rounded-t-[24px] sm:rounded-t-[16px]">
 
+    </div>
   </div>
 </div>
