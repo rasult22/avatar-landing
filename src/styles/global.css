@@ -20,3 +20,8 @@ body {
   backdrop-filter: blur(51.98776626586914px);
   background: rgba(20, 26, 33, 0.48);
 }
+
+.lang-selector-bg {
+  background: linear-gradient(102deg, #1DA1F2 -18.39%, rgba(153, 153, 153, 0.10) 51.46%, #7289DA 100%);
+  backdrop-filter: blur(12.5px);
+}
