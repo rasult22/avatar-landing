@@ -25,6 +25,13 @@ body {
   background: linear-gradient(102deg, #1DA1F2 -18.39%, rgba(153, 153, 153, 0.10) 51.46%, #7289DA 100%);
   backdrop-filter: blur(12.5px);
 }
+.login-bg {
+  backdrop-filter: blur(25px);
+  background: linear-gradient(135deg, rgba(29, 161, 242, 0.4) 24.4%, rgba(153, 153, 153, 0.4) 60%, rgba(114, 137, 218, 0.5) 100%);
+}
+.menu-gradient {
+  background: linear-gradient(174deg, #142B3A 0%, #091720 50.5%, #142B3A 100%);
+}
 img {
   -webkit-user-drag: none;
 }

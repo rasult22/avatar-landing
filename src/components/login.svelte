@@ -7,9 +7,10 @@
   let isMetamaskLoading = false;
   let isMetamaskConnected = false;
   let address;
-  $: provider = new ethers.BrowserProvider(window.ethereum, 'any')
+  let provider;
 
   onMount(async () => {
+    provider = new ethers.BrowserProvider(window.ethereum, 'any')
     if (!window.ethereum) return;
     isMetamaskLoading = true;
     isMetamaskInstalled = true;
@@ -59,11 +60,11 @@
 
 </script>
 {#if !address}
-  <button class="bg-purple-800 text-white p-4 rounded-md" on:click={connectWithMetamask}>
+  <button class="login-bg border block text-[16px] font-semibold border-[#5ABEFB] text-white py-[13px] px-[30px] rounded-full" on:click={connectWithMetamask}>
     Login
   </button>
 {:else}
-  <p class="bg-blue-500 text-white p-4 rounded-md">
+  <button class="login-bg border block text-[16px] font-semibold border-[#5ABEFB] text-white py-[13px] px-[30px] rounded-full">
     {address.slice(0, 5)}...
-  </p>
+  </button>
 {/if}
