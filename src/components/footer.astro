@@ -26,30 +26,30 @@ const links: Array<FooterLink> = [
 ];
 ---
 
-<footer class="relative mx-auto mt-[150px] pb-[100px] max-w-[1430px] flex justify-between">
+<footer class="relative mx-auto mt-[150px] md:px-[40px] sm:px-[24px] pb-[100px] sm:pb-[44px] max-w-[1430px] flex justify-between sm:flex-wrap">
   <div>
-    <div>
-      <div class="text-[64px] font-Poppins font-semibold text-white">Join our community</div>
-      <div class="text-[20px] mt-[40px]">Follow the latest news from our company on our social networks</div>
+    <div class="sm:text-center">
+      <div class="text-[64px] md:text-[32px] sm:text-[32px] font-Poppins font-semibold text-white">Join our community</div>
+      <div class="text-[20px] md:text-[17px] sm:text-[17px] mt-[40px] md:mt-[24px] sm:mt-[24px] ">Follow the latest news from our company on our social networks</div>
     </div>
-    <div class="mt-[100px]">
-      <ul class="flex space-x-4">
-        <li><img src="/facebook.svg" alt=""></li>
-        <li><img src="/twitter.svg" alt=""></li>
-        <li><img src="/discord.svg" alt=""></li>
+    <div class="mt-[100px] sm:my-[72px]">
+      <ul class="flex space-x-4 sm:justify-center">
+        <li><img class="sm:max-w-[48px]" src="/facebook.svg" alt=""></li>
+        <li><img class="sm:max-w-[48px]" src="/twitter.svg" alt=""></li>
+        <li><img class="sm:max-w-[48px]" src="/discord.svg" alt=""></li>
       </ul>
     </div>
   </div>
-  <div class="flex flex-col">
+  <div class="flex flex-col sm:mx-auto">
     <div>
-      <img class="max-w-[400px] mt-[10px]" src="/logo.png" alt="">
+      <img class="max-w-[400px] md:max-w-[202px] sm:max-w-[196px] mt-[10px]" src="/logo.png" alt="">
     </div>
-    <ul class="flex space-x-4 justify-end mt-auto text-[#B1B1B1]">
+    <ul class="md:text-[17px] sm:mt-[33px] flex space-x-4 justify-end sm:justify-center mt-auto text-[#B1B1B1]">
       <li>FAQ</li>
       <li>Privacy Policy</li>
     </ul>
   </div>
 </footer>
-<div class="text-center text-[16px] text-[#B1B1B1] pb-[100px]">
+<div class="text-center text-[16px] text-[#B1B1B1] pb-[100px] sm:pb-[60px]">
   Companion LCC
 </div>
