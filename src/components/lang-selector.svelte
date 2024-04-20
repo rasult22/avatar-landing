@@ -4,7 +4,7 @@
   let show = false
 </script>
 <svelte:body on:click={() => show = false}></svelte:body>
-<div class="relative min-w-[103px]">
+<div class="relative">
   <button on:click={(e) => {
     e.preventDefault()
     e.stopPropagation()
@@ -27,7 +27,7 @@
       {/if}
   </button>
   {#if show }
-    <button transition:fade={{duration: 100}} class="absolute top-[100%] left-0 lang-selector-bg border border-[#5ABEFB] py-[10px] px-[20px] rounded-[20px]">
+    <button transition:fade={{duration: 100}} class="absolute min-w-[103px] top-[100%] left-0 lang-selector-bg border border-[#5ABEFB] py-[10px] px-[20px] rounded-[20px]">
       <button on:click={() => lang ='en'} class="flex text-[20px] font-bold space-x-2 items-center border-b pb-2">
         <img class="w-[25px]" src="/en.svg" alt="">
         <!-- <img src="/ru.svg" alt=""> -->
