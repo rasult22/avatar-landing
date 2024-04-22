@@ -8,7 +8,7 @@
     </div>
   </div>
 </div>
-<section class="bg-[url(/optimized/bg-roadmap.webp)] relative bg-cover min-h-[600px] pt-[170px] sm:pt-[100px]">
+<section id="cursor-section" class="bg-[url(/optimized/bg-roadmap.webp)] group relative overflow-hidden bg-cover min-h-[600px] pt-[170px] sm:pt-[100px]">
   <img width="710" height="1535" class="sm:hidden max-w-[710px] mx-auto md:hidden" src="/optimized/cursors.webp" alt="roadmap">
   <img width="121" height="1508" class="sm:hidden max-w-[121px] mx-auto hidden md:block" src="/optimized/cursors-md.webp" alt="roadmap">
   <div class="sm:hidden absolute left-[50%] w-[620px] translate-x-[-110%] md:translate-x-[-60%] top-[282px] md:top-[255px]">
@@ -145,4 +145,23 @@
       </div>
     </div>
   </div>
+  <div id="cursor" class="hidden group-hover:block will-change-auto transition-all duration-0 fixed w-[200px] h-[200px] bg-[#1DA1F2] blur-[150px] mix-blend-plus-lighter">
+  </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const el = document.querySelector('#cursor')
+    const section = document.querySelector('#cursor-section')
+    
+    function updatePosition(e) {
+      el.style.left = e.clientX - 100 + 'px';
+      el.style.top = e.clientY - 100 + 'px'
+    }
+
+    if (el && section && window.innerWidth > 700) {
+      document.addEventListener('mousemove', updatePosition)
+      document.addEventListener('scroll', updatePosition)
+    }
+  })
+</script>
