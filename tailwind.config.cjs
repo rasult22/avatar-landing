@@ -26,6 +26,67 @@ module.exports = {
       'top-4': 'center top 1rem',
     },
     extend: {
+      animation: {
+        circling: 'circling 10s ease-in-out infinite',
+        'custom-top': 'custom-top 15s ease-in-out infinite',
+        'circling-reverse': 'circling-reverse 7s ease-in-out infinite'
+      },
+      keyframes: {
+        circling: {
+          '0%, 100%': {
+            left: '10%',
+            bottom: '10%'
+          },
+          '25%': {
+            left: '15%',
+            bottom: '25%'
+          },
+          '50%': {
+            left: '30%',
+            bottom: '25%'
+          },
+          '75%': {
+            left: '18%',
+            bottom: '25%'
+          },
+        },
+        'custom-top': {
+          '0%, 100%': {
+            left: '0%',
+            top: '0%'
+          },
+          '25%': {
+            left: '3%',
+            top: '0%'
+          },
+          '50%': {
+            left: '5%',
+            top: '-5%'
+          },
+          '75%': {
+            left: '-5%',
+            top: '-5%'
+          },
+        },
+        'circling-reverse': {
+          '0%, 100%': {
+            right: '5%',
+            bottom: '5%'
+          },
+          '25%': {
+            right: '-5%',
+            bottom: '20%'
+          },
+          '50%': {
+            right: '-10%',
+            bottom: '20%'
+          },
+          '75%': {
+            right: '-7%',
+            bottom: '20%'
+          },
+        }
+      },
       fontFamily: {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
       },
