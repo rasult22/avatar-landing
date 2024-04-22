@@ -14,7 +14,7 @@ const navItems: Array<NavItem> = [
 
 <header
   id="page-header"
-  class="absolute font-Poppins flex items-center min-h-[100px] text-[20px] w-full justify-between bg-gradient-to-b from-[#071C27]  to-transparent top-0 z-20  border-transparent px-8 py-4 text-white"
+  class="absolute font-Poppins flex items-center min-h-[100px] text-[20px] w-full justify-between  top-0 z-20  header-bg px-8 py-4 text-white"
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
     <img width="206" height="45" class="max-w-[206px]" src="/optimized/logo.webp" alt="logo">
@@ -145,9 +145,15 @@ const navItems: Array<NavItem> = [
 <style>
   .fixed-header {
     @apply fixed bottom-auto top-0;
-    @apply border-default bg-default text-default;
+    @apply text-default;
+    border-bottom: 1px solid #2B43F7;
+    background: linear-gradient(180deg, #091720 0%, rgba(9, 23, 32, 0.70) 100%);
   }
   .modal.is-open {
     @apply block;
+  }
+  .header-bg {
+    border-bottom: 1px solid #2B43F7;
+    background: linear-gradient(180deg, #091720 0%, rgba(9, 23, 32, 0.70) 100%);
   }
 </style>
