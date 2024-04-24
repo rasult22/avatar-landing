@@ -3,8 +3,9 @@
 // import ContentSection from "~/components/content-section.astro";
 ---
 
-<video class="absolute z-[1] top-0 sm:hidden left-0 w-full min-w-[1000px] object-cover" autoplay muted loop id="bg">
-  <source src="/video.mp4">
+<video id="bg-video" class="absolute z-[1] top-0 sm:hidden left-0 w-full min-w-[1000px] object-cover" autoplay muted loop id="bg">
+  <!-- <source data-src="/video.mp4"> -->
+  <source data-src="/video.webm">
 </video>
 <section class="bg-[url(/optimized/bg.webp)] sm:overflow-hidden sm:bg-[url(/optimized/bg-sm.webp)] md:min-h-[530px] relative px-10 sm:px-4 bg-cover bg-center md:bg-p-100% flex items-end pb-[100px] md:pb-[34px] sm:min-h-[95vh]">
   
@@ -22,11 +23,51 @@ AI generated friend
     <div class="bg-app-bg w-full h-full rounded-t-[48px] md:rounded-t-[24px] sm:rounded-t-[16px]">
     </div>
   </div>
-  <video class="opacity-0 w-full object-cover" autoplay muted loop id="bg">
-    <source src="/video.mp4">
+  <video class="opacity-0 w-full object-cover" autoplay muted loop id="bg-video-2">
+    <!-- <source data-src="/video.mp4"> -->
+    <source data-src="/video.webm">
   </video>
   <div class="z-[2] absolute animate-custom-top left-[20%] w-[200px] md:w-[100px] h-[200px] md:h-[100px] sm:w-[40px] sm:h-[40px] bg-[#1DA1F2D9] blur-[70px] md:blur-[30px] rounded-full" />
   <div class="z-[2] absolute animate-circling left-[20%] w-[400px] md:w-[200px] h-[400px] md:h-[200px] sm:w-[130px] sm:h-[130px] bg-[#1DA1F2D9] blur-[100px] md:blur-[50px] sm:blur-[35px] rounded-full" />
   <div class="z-[2] absolute animate-circling-reverse right-[20%] w-[300px] md:w-[150px] h-[300px] md:h-[150px] sm:w-[130px] sm:h-[130px] bg-[#1DA1F2D9] blur-[80px] md:blur-[50px] sm:blur-[75px] rounded-full">
   </div>
 </section>
+<script>
+  function setupCursor () {
+    const el = document.querySelector('#cursor')
+    const section = document.querySelector('#cursor-section')
+
+    function updatePosition(e) {
+      el.style.left = e.clientX - 100 + 'px';
+      el.style.top = e.clientY - 100 + 'px'
+    }
+
+    if (el && section && window.innerWidth > 700) {
+      document.addEventListener('mousemove', updatePosition)
+    }
+  }
+  function loadVideos() {
+    const bgv = document.getElementById("bg-video");
+    const bgv2 = document.getElementById("bg-video-2");
+    if(!bgv || !bgv2) return
+
+    if (window.innerWidth > 700) {
+      const children = bgv.getElementsByTagName("source");
+      const children2 = bgv2.getElementsByTagName("source");
+
+      for (let i = 0; i < children.length; ++i) {
+        children[i].src = children[i].dataset.src;
+      }
+      for (let i = 0; i < children2.length; ++i) {
+        children2[i].src = children2[i].dataset.src;
+      }
+      bgv.load();
+      bgv2.load();
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', function() {
+    setupCursor()
+    loadVideos()
+  })
+</script>

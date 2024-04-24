@@ -10,11 +10,18 @@ body {
 .app-border-gradient-bg {
   background: linear-gradient(90deg, #0B63F6 0%, #9F87FF 43%, #08D5EC 73%, #41F892 100%);
 }
+
 .app-text-gradient-bg {
   background: linear-gradient(90deg, #2b43f7 5.84%, #00c9fb 63.5%, #45fa8e 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.black-gradient {
+  background: linear-gradient(0deg, #0D111D 0%, rgba(13, 19, 31, 0.00) 100%);
+}
+.text-shadow-blue {
+  text-shadow: 0px 0px 10px #00C9FB;
 }
 .app-glass-bg {
   backdrop-filter: blur(51.98776626586914px);

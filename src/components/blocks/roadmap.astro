@@ -145,22 +145,6 @@
       </div>
     </div>
   </div>
-  <div id="cursor" class="will-change-auto transition-all duration-0 z-[4] fixed w-[200px] h-[200px] bg-[#1DA1F2] blur-[150px] mix-blend-plus-lighter">
+  <div id="cursor" class="will-change-auto transition-all duration-[35ms] z-[4] fixed w-[200px] h-[200px] bg-[#1DA1F2] blur-[110px] mix-blend-plus-lighter">
   </div>
 </section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const el = document.querySelector('#cursor')
-    const section = document.querySelector('#cursor-section')
-
-    function updatePosition(e) {
-      el.style.left = e.clientX - 100 + 'px';
-      el.style.top = e.clientY - 100 + 'px'
-    }
-
-    if (el && section && window.innerWidth > 700) {
-      document.addEventListener('mousemove', updatePosition)
-    }
-  })
-</script>
