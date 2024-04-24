@@ -5,6 +5,6 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "http://avatar-landing-page-site.s3-website-us-east-1.amazonaws.com/",
+  site: "https://companionai.tech/",
   integrations: [tailwind(), icon(), svelte()],
 });
