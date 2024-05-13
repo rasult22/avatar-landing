@@ -2,14 +2,40 @@
 // import { Icon } from "astro-icon/components";
 // import ContentSection from "~/components/content-section.astro";
 ---
-
+<script>
+  import { animate, inView, spring, scroll } from "motion"
+  inView('#intro-section', () => {
+    animate('#intro-text', { x: [-500, 0, ] },
+    {
+      duration: 1,
+      easing: spring(),
+    })
+  })
+  inView('#whatis', () => {
+    animate('#home', { x: [-500, 0, ] },
+    {
+      duration: 1,
+      easing: spring()
+    })
+  })
+  scroll(x => {
+    console.log(x)
+  })
+  // animate('img', {
+  //   y: [-10, -5, 0, 5, 10, 5, 0, -5, -10]
+  // }, {
+  //   duration:  1,
+  //   repeat: Infinity,
+  //   easing: "ease-out",
+  // })
+</script>
 <video id="bg-video" class="absolute z-[1] top-0 sm:hidden left-0 w-full min-w-[1000px] object-cover" autoplay muted loop id="bg">
   <!-- <source data-src="/video.mp4"> -->
   <source data-src="/video.webm">
 </video>
-<section class="bg-[url(/optimized/bg.webp)] sm:overflow-hidden sm:bg-[url(/optimized/bg-sm.webp)] md:min-h-[530px] relative px-10 sm:px-4 bg-cover bg-center md:bg-p-100% flex items-end pb-[100px] md:pb-[34px] sm:min-h-[95vh]">
+<section id="intro-section" class="bg-[url(/optimized/bg.webp)] sm:overflow-hidden sm:bg-[url(/optimized/bg-sm.webp)] md:min-h-[530px] relative px-10 sm:px-4 bg-cover bg-center md:bg-p-100% flex items-end pb-[100px] md:pb-[34px] sm:min-h-[95vh]">
   
-  <div class="z-[3] absolute bottom-[200px] md:bottom-[60px] sm:bottom-[50px] space-y-[40px] md:space-y-[16px] sm:space-y-[16px]">
+  <div id="intro-text" class="z-[3] absolute bottom-[200px] md:bottom-[60px] sm:bottom-[50px] space-y-[40px] md:space-y-[16px] sm:space-y-[16px]">
     <h1 class=" min-h-[100px] sm:min-h-[30px] font-Poppins max-w-[644px] md:max-w-[500px] font-semibold text-white text-[64px] md:text-[48px] sm:text-[32px] leading-[75px] md:leading-[56px] sm:leading-[40px]">
       <span class="app-text-gradient-bg text-transparent bg-clip-text">CompAI</span> – your best
 AI generated friend
