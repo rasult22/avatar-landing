@@ -3,9 +3,8 @@
 // import ContentSection from "~/components/content-section.astro";
 ---
 
-<video id="bg-video" class="absolute z-[1] top-0 sm:hidden left-0 w-full min-w-[1000px] object-cover" autoplay muted loop id="bg">
-  <!-- <source data-src="/video.mp4"> -->
-  <source data-src="/video.webm">
+<video id="bg-video" class="absolute z-[1] top-0 sm:hidden left-0 w-full min-w-[1000px] object-cover" autoplay muted id="bg">
+  <source src="/video.webm">
 </video>
 <section class="bg-[url(/optimized/bg.webp)] sm:overflow-hidden sm:bg-[url(/optimized/bg-sm.webp)] md:min-h-[530px] relative px-10 sm:px-4 bg-cover bg-center md:bg-p-100% flex items-end pb-[100px] md:pb-[34px] sm:min-h-[95vh]">
   
@@ -23,8 +22,7 @@ AI generated friend
     <div class="bg-app-bg w-full h-full rounded-t-[48px] md:rounded-t-[24px] sm:rounded-t-[16px]">
     </div>
   </div>
-  <video class="opacity-0 w-full object-cover" autoplay muted loop id="bg-video-2">
-    <!-- <source data-src="/video.mp4"> -->
+  <video class="opacity-0 w-full object-cover" autoplay muted id="bg-video-2">
     <source data-src="/video.webm">
   </video>
   <div class="z-[2] absolute animate-custom-top left-[20%] w-[200px] md:w-[100px] h-[200px] md:h-[100px] sm:w-[40px] sm:h-[40px] bg-[#1DA1F2D9] blur-[70px] md:blur-[30px] rounded-full" />
@@ -46,28 +44,18 @@ AI generated friend
       document.addEventListener('mousemove', updatePosition)
     }
   }
-  function loadVideos() {
-    const bgv = document.getElementById("bg-video");
-    const bgv2 = document.getElementById("bg-video-2");
-    if(!bgv || !bgv2) return
-
-    if (window.innerWidth > 700) {
-      const children = bgv.getElementsByTagName("source");
-      const children2 = bgv2.getElementsByTagName("source");
-
-      for (let i = 0; i < children.length; ++i) {
-        children[i].src = children[i].dataset.src;
-      }
-      for (let i = 0; i < children2.length; ++i) {
-        children2[i].src = children2[i].dataset.src;
-      }
-      bgv.load();
-      bgv2.load();
-    }
-  }
 
   window.addEventListener('DOMContentLoaded', function() {
     setupCursor()
-    loadVideos()
+    setupVideo()
   })
+
+  function setupVideo () {
+    const video = document.getElementById('bg-video');
+    video && video.addEventListener('ended', () => {
+      video.currentTime = 0.05;
+      video.play();
+    });
+  }
+
 </script>
