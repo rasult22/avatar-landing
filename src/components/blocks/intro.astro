@@ -3,8 +3,8 @@
 // import ContentSection from "~/components/content-section.astro";
 ---
 
-<video id="bg-video" class="absolute z-[1] top-0 sm:hidden left-0 w-full min-w-[1000px] object-cover" autoplay muted id="bg">
-  <source src="/video.webm">
+<video id="bg-video" class="absolute z-[1] top-0 sm:hidden left-0 w-full min-w-[1000px] object-cover" autoplay loop muted id="bg">
+  <source src="/boomerang.mp4">
 </video>
 <section class="bg-[url(/optimized/bg.webp)] sm:overflow-hidden sm:bg-[url(/optimized/bg-sm.webp)] md:min-h-[530px] relative px-10 sm:px-4 bg-cover bg-center md:bg-p-100% flex items-end pb-[100px] md:pb-[34px] sm:min-h-[95vh]">
   
@@ -22,8 +22,8 @@ AI generated friend
     <div class="bg-app-bg w-full h-full rounded-t-[48px] md:rounded-t-[24px] sm:rounded-t-[16px]">
     </div>
   </div>
-  <video class="opacity-0 w-full object-cover" autoplay muted id="bg-video-2">
-    <source data-src="/video.webm">
+  <video class="opacity-0 w-full object-cover" autoplay loop muted id="bg-video-2">
+    <source data-src="/boomerang.mp4">
   </video>
   <div class="z-[2] absolute animate-custom-top left-[20%] w-[200px] md:w-[100px] h-[200px] md:h-[100px] sm:w-[40px] sm:h-[40px] bg-[#1DA1F2D9] blur-[70px] md:blur-[30px] rounded-full" />
   <div class="z-[2] absolute animate-circling left-[20%] w-[400px] md:w-[200px] h-[400px] md:h-[200px] sm:w-[130px] sm:h-[130px] bg-[#1DA1F2D9] blur-[100px] md:blur-[50px] sm:blur-[35px] rounded-full" />
@@ -47,15 +47,9 @@ AI generated friend
 
   window.addEventListener('DOMContentLoaded', function() {
     setupCursor()
-    setupVideo()
-  })
-
-  function setupVideo () {
     const video = document.getElementById('bg-video');
-    video && video.addEventListener('ended', () => {
-      video.currentTime = 0.05;
-      video.play();
-    });
-  }
+      if(video) video.playbackRate = 0.7;
+  })
+  
 
 </script>
