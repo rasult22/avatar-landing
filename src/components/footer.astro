@@ -26,7 +26,7 @@ const links: Array<FooterLink> = [
 ];
 ---
 
-<footer class="relative mx-auto mt-[150px] md:px-[40px] px-[40px] sm:px-[24px] pb-[100px] sm:pb-[44px] max-w-[1430px] flex justify-between sm:flex-wrap">
+<footer class="z-[5] relative mx-auto mt-[150px] md:px-[40px] px-[40px] sm:px-[24px] pb-[100px] sm:pb-[44px] max-w-[1430px] flex justify-between sm:flex-wrap">
   <div>
     <div class="sm:text-center">
       <div class="text-[64px] md:text-[32px] sm:text-[32px] font-Poppins font-semibold text-white">Join our community</div>
@@ -46,7 +46,7 @@ const links: Array<FooterLink> = [
     </div>
     <ul class="md:text-[17px] sm:mt-[33px] flex space-x-4 justify-end sm:justify-center mt-auto text-[#B1B1B1]">
       <li>FAQ</li>
-      <li>Privacy Policy</li>
+      <a target="_blank" class="underline hover:opacity-[0.5]" href="/privacy.pdf"><li>Privacy Policy</li></a>
     </ul>
   </div>
 </footer>
