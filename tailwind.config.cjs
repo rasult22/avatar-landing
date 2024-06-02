@@ -122,6 +122,7 @@ module.exports = {
         lg: { min: "1200px" },
         md: { max: "1200px", min: "700px" },
         sm: { max: "700px", min: "0px" },
+        '3xl': {min: '2000px'}
       },
     },
   },
