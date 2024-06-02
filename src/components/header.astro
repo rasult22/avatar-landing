@@ -46,7 +46,7 @@ const navItems: Array<NavItem> = [
 
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
       <div class="fixed w-full h-full left-0 top-0 bg-[rgba(0,0,0,0.4)]"></div>
-      <div class="fixed w-[80%] right-0 top-0 h-[100vh] bg-default px-8 py-4 text-default menu-gradient">
+      <div id="drawer" class="fixed w-[80%] translate-x-[80%] right-0 top-0 h-[100vh] bg-default px-8 py-4 text-default menu-gradient">
         <div class="space-y-4" role="dialog" aria-modal="true">
           <header class="text-right">
             <button
@@ -96,6 +96,7 @@ const navItems: Array<NavItem> = [
 
 <script>
   import MicroModal from "micromodal";
+import { animate } from "motion";
   import invariant from "tiny-invariant";
 
   const menuModalId = "menu-modal";
@@ -113,10 +114,19 @@ const navItems: Array<NavItem> = [
 
   const openMenu = () => {
     MicroModal.show(menuModalId, { disableScroll: true });
+
+    animate("#drawer", {
+      transform: ['translateX(0px)']
+    })
   };
 
   const closeMenu = () => {
-    MicroModal.close(menuModalId);
+    animate("#drawer", {
+      transform: ['translateX(100%)']
+    })
+    setTimeout(() => {
+      MicroModal.close(menuModalId);
+    }, 400)
   };
 
   openNavButton.addEventListener("click", openMenu);
