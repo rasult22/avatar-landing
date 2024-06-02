@@ -1,124 +1,354 @@
-<section class="px-4 relative z-[5] pt-[199px] md:pt-[96px] sm:pt-[96px] max-w-[2164px] mx-auto">
-  <div class="max-w-[800px] mx-auto text-center sm:hidden">
-    <h2 class="text-[64px] md:text-[32px] font-semibold font-Poppins">
-      <span class="app-text-gradient-bg text-transparent bg-clip-text">
+<section class="relative z-[5]">
+  <style>
+    .card {
+      transition: all 0.3s;
+      box-shadow: 0px 0px 20px 0px #1DA1F2;
+      width: 400px;
+      height: 520px;
+    }
+    .card.active-slider {
+      width: 500px;
+      height: 650px;
+      opacity: 1;
+    }
+    .card:not(.active) {
+      opacity: 1;
+    }
+    .card-sublock {
+      opacity: 0;
+    }
+    .card.active-slider .card-sublock {
+      opacity: 1;
+    }
+    @media (max-width: 500px) {
+      .card {
+        width: 280px;
+        height: 364px;
+      }
+      .card.active-slider {
+        width: 350px;
+        height: 455px;
+      }
+    }
+  </style>
+</section>
+<section
+  class="relative z-[5] mx-auto max-w-[2164px] px-4 pt-[199px] sm:pt-[96px] md:pt-[96px]"
+>
+  <div class="mx-auto max-w-[800px] text-center sm:hidden">
+    <h2 class="font-Poppins text-[64px] font-semibold md:text-[32px]">
+      <span class="app-text-gradient-bg bg-clip-text text-transparent">
         Companions
       </span>
     </h2>
-    <div class="text-[20px] md:text-[17px] mt-[40px] md:mt-[24px]">
-      Users are provided with various types of companions where each has different avatars – not only natural but animated appearances as well.
-    </div>
-  </div>
-  <div class="sm:mt-0">
-    <div class="pt-[100px] md:pt-[60px] px-12 mx-auto flex md:justify-center sm:justify-center md:flex-wrap sm:flex-wrap gap-6 overflow-x-auto pb-12">
-      <div class="relative rounded-[12px] group transition-transform duration-100 hover:scale-105 hover:cursor-pointer hover:shadow-card box-border hover:outline hover:outline-2 hover:outline-[#1DA1F2] hover:outline-offset-1 overflow-hidden flex items-end bg-cover bg-center bg-[url(/optimized/p1.webp)] w-[310px] h-[457px] min-w-[310px]">
-        <div class="absolute top-4 right-4 px-[11px] py-[11px] app-glass-bg rounded-full">
-          <img width="27" height="27" src="/loop.svg" alt="loop">
-        </div>
-        <div class="app-glass-bg -mb-1 w-full p-4">
-          <div class="text-white group-hover:text-[24px] text-[30px]">Diana</div>
-          <div class="text-[20px] group-hover:text-[18px]">Biology teacher</div>
-          <div class="hidden group-hover:block text-[17px] pl-4 pt-2">
-            - I can help to study biology better
-          </div>
-          <div class="flex items-center">
-            <div class="-ml-4 h-[2px] bg-white w-full"></div>
-            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1375 16.8684L13.7478 15.2611L19.0094 20.5363L24.2695 15.2611L25.8798 16.8684L19.0094 23.7554L12.1375 16.8684ZM33.7935 19.0518C33.7935 10.9002 27.1611 4.26782 19.0094 4.26782C10.8578 4.26782 4.22541 10.9002 4.22541 19.0518C4.22541 27.2035 10.8578 33.8359 19.0094 33.8359C27.1611 33.8359 33.7935 27.2035 33.7935 19.0518Z" fill="white"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="relative rounded-[12px] group transition-transform duration-100 hover:scale-105 hover:cursor-pointer hover:shadow-card box-border hover:outline hover:outline-2 hover:outline-[#1DA1F2] hover:outline-offset-1 overflow-hidden flex items-end bg-cover bg-center bg-[url(/optimized/p2.webp)] w-[310px] h-[457px] min-w-[310px]">
-        <div class="absolute top-4 right-4 px-[11px] py-[11px] app-glass-bg rounded-full">
-          <img width="27" height="27" src="/loop.svg" alt="loop">
-        </div>
-        <div class="app-glass-bg -mb-1 w-full p-4">
-          <div class="text-white group-hover:text-[24px] text-[30px]">Maria</div>
-          <div class="text-[20px] group-hover:text-[18px]">Personal doctor</div>
-          <div class="hidden group-hover:block text-[17px] pl-4 pt-2">
-            - I can give you tips on improving your health
-          </div>
-          <div class="flex items-center">
-            <div class="-ml-4 h-[2px] bg-white w-full"></div>
-            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1375 16.8684L13.7478 15.2611L19.0094 20.5363L24.2695 15.2611L25.8798 16.8684L19.0094 23.7554L12.1375 16.8684ZM33.7935 19.0518C33.7935 10.9002 27.1611 4.26782 19.0094 4.26782C10.8578 4.26782 4.22541 10.9002 4.22541 19.0518C4.22541 27.2035 10.8578 33.8359 19.0094 33.8359C27.1611 33.8359 33.7935 27.2035 33.7935 19.0518Z" fill="white"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="relative rounded-[12px] group transition-transform duration-100 hover:scale-105 hover:cursor-pointer hover:shadow-card box-border hover:outline hover:outline-2 hover:outline-[#1DA1F2] hover:outline-offset-1 overflow-hidden flex items-end bg-cover bg-center bg-[url(/optimized/p3.webp)] w-[310px] h-[457px] min-w-[310px]">
-        <div class="absolute top-4 right-4 px-[11px] py-[11px] app-glass-bg rounded-full">
-          <img width="27" height="27" src="/loop.svg" alt="loop">
-        </div>
-        <div class="app-glass-bg -mb-1 w-full p-4">
-          <div class="text-white group-hover:text-[24px] text-[30px]">Lana</div>
-          <div class="text-[20px] group-hover:text-[18px]">Your best friend</div>
-          <div class="hidden group-hover:block text-[17px] pl-4 pt-2">
-            - I could listen to all your stories
-          </div>
-          <div class="flex items-center">
-            <div class="-ml-4 h-[2px] bg-white w-full"></div>
-            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1375 16.8684L13.7478 15.2611L19.0094 20.5363L24.2695 15.2611L25.8798 16.8684L19.0094 23.7554L12.1375 16.8684ZM33.7935 19.0518C33.7935 10.9002 27.1611 4.26782 19.0094 4.26782C10.8578 4.26782 4.22541 10.9002 4.22541 19.0518C4.22541 27.2035 10.8578 33.8359 19.0094 33.8359C27.1611 33.8359 33.7935 27.2035 33.7935 19.0518Z" fill="white"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="relative rounded-[12px] group transition-transform duration-100 hover:scale-105 hover:cursor-pointer hover:shadow-card box-border hover:outline hover:outline-2 hover:outline-[#1DA1F2] hover:outline-offset-1 overflow-hidden flex items-end bg-cover bg-center bg-[url(/optimized/p4.webp)] w-[310px] h-[457px] min-w-[310px]">
-        <div class="absolute top-4 right-4 px-[11px] py-[11px] app-glass-bg rounded-full">
-          <img width="27" height="27" src="/loop.svg" alt="loop">
-        </div>
-        <div class="app-glass-bg -mb-1 w-full p-4">
-          <div class="text-white group-hover:text-[24px] text-[30px]">Max</div>
-          <div class="text-[20px] group-hover:text-[18px]">Trainer</div>
-          <div class="hidden group-hover:block text-[17px] pl-4 pt-2">
-            - We can pump up your body together
-          </div>
-          <div class="flex items-center">
-            <div class="-ml-4 h-[2px] bg-white w-full"></div>
-            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1375 16.8684L13.7478 15.2611L19.0094 20.5363L24.2695 15.2611L25.8798 16.8684L19.0094 23.7554L12.1375 16.8684ZM33.7935 19.0518C33.7935 10.9002 27.1611 4.26782 19.0094 4.26782C10.8578 4.26782 4.22541 10.9002 4.22541 19.0518C4.22541 27.2035 10.8578 33.8359 19.0094 33.8359C27.1611 33.8359 33.7935 27.2035 33.7935 19.0518Z" fill="white"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="relative rounded-[12px] group transition-transform duration-100 hover:scale-105 hover:cursor-pointer hover:shadow-card box-border hover:outline hover:outline-2 hover:outline-[#1DA1F2] hover:outline-offset-1 overflow-hidden flex items-end bg-cover bg-center bg-[url(/optimized/p5.webp)] w-[310px] h-[457px] min-w-[310px]">
-        <div class="absolute top-4 right-4 px-[11px] py-[11px] app-glass-bg rounded-full">
-          <img width="27" height="27" src="/loop.svg" alt="loop">
-        </div>
-        <div class="app-glass-bg -mb-1 w-full p-4">
-          <div class="text-white group-hover:text-[24px] text-[30px]">Emilie</div>
-          <div class="text-[20px] group-hover:text-[18px]">Stylist</div>
-          <div class="hidden group-hover:block text-[17px] pl-4 pt-2">
-            - With me, you'll be the most stylish person
-          </div>
-          <div class="flex items-center">
-            <div class="-ml-4 h-[2px] bg-white w-full"></div>
-            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1375 16.8684L13.7478 15.2611L19.0094 20.5363L24.2695 15.2611L25.8798 16.8684L19.0094 23.7554L12.1375 16.8684ZM33.7935 19.0518C33.7935 10.9002 27.1611 4.26782 19.0094 4.26782C10.8578 4.26782 4.22541 10.9002 4.22541 19.0518C4.22541 27.2035 10.8578 33.8359 19.0094 33.8359C27.1611 33.8359 33.7935 27.2035 33.7935 19.0518Z" fill="white"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="relative rounded-[12px] group transition-transform duration-100 hover:scale-105 hover:cursor-pointer hover:shadow-card box-border hover:outline hover:outline-2 hover:outline-[#1DA1F2] hover:outline-offset-1 overflow-hidden flex items-end bg-cover bg-center bg-[url(/optimized/p6.webp)] w-[310px] h-[457px] min-w-[310px]">
-        <div class="absolute top-4 right-4 px-[11px] py-[11px] app-glass-bg rounded-full">
-          <img width="27" height="27" src="/loop.svg" alt="loop">
-        </div>
-        <div class="app-glass-bg -mb-1 w-full p-4">
-          <div class="text-white group-hover:text-[24px] text-[30px]">Li</div>
-          <div class="text-[20px] group-hover:text-[18px]">Math teacher</div>
-          <div class="hidden group-hover:block text-[17px] pl-4 pt-2">
-            - Maths exams? I'll help you get a better grade
-          </div>
-          <div class="flex items-center">
-            <div class="-ml-4 h-[2px] bg-white w-full"></div>
-            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1375 16.8684L13.7478 15.2611L19.0094 20.5363L24.2695 15.2611L25.8798 16.8684L19.0094 23.7554L12.1375 16.8684ZM33.7935 19.0518C33.7935 10.9002 27.1611 4.26782 19.0094 4.26782C10.8578 4.26782 4.22541 10.9002 4.22541 19.0518C4.22541 27.2035 10.8578 33.8359 19.0094 33.8359C27.1611 33.8359 33.7935 27.2035 33.7935 19.0518Z" fill="white"/>
-            </svg>
-          </div>
-        </div>
-      </div>
+    <div class="mt-[40px] text-[20px] md:mt-[24px] md:text-[17px]">
+      Users are provided with various types of companions where each has
+      different avatars – not only natural but animated appearances as well.
     </div>
   </div>
 </section>
+<div
+  id="companions-slider"
+  class="relative z-[5] mt-[40px] min-w-[4000px] sm:mt-0"
+>
+  <div
+    id="slider"
+    class="flex min-h-[700px] items-center justify-start space-x-10 sm:min-h-[500px]"
+  >
+    <div
+      data-index="0"
+      class="card active-slider flex cursor-pointer items-end justify-center overflow-hidden rounded-[36px] bg-[url(/optimized/p1.webp)] bg-contain text-center"
+    >
+      <div
+        class="card-sublock w-full rounded-b-[24px] border-t border-white border-opacity-30 bg-[rgba(20,26,33,0.3)] p-4 backdrop-blur-[25.99388313293457px] transition-all sm:p-2"
+      >
+        <div class="text-[48px] sm:text-[24px]">Diana</div>
+        <div
+          class="mt-[12px] inline w-auto rounded-[100px] border border-white border-opacity-20 bg-[rgba(255,255,255,0.2)] px-4 py-2 text-[24px] text-[#B2BAC8] backdrop-blur-[12.5px] sm:px-2 sm:py-1 sm:text-[16px]"
+        >
+          Biology teacher
+        </div>
+        <div class="mt-[30px] sm:mt-[16px] sm:text-[14px]">
+          – I can help to study biology better
+        </div>
+      </div>
+    </div>
+    <div
+      class="card flex cursor-pointer items-end justify-center overflow-hidden rounded-[36px] bg-[url(/optimized/p2.webp)] bg-contain text-center"
+      data-index="1"
+    >
+      <div
+        class="card-sublock w-full rounded-b-[24px] border-t border-white border-opacity-30 bg-[rgba(20,26,33,0.3)] p-4 backdrop-blur-[25.99388313293457px] transition-all sm:p-2"
+      >
+        <div class="text-[48px] sm:text-[24px]">Maria</div>
+        <div
+          class="mt-[12px] inline w-auto rounded-[100px] border border-white border-opacity-20 bg-[rgba(255,255,255,0.2)] px-4 py-2 text-[24px] text-[#B2BAC8] backdrop-blur-[12.5px] sm:px-2 sm:py-1 sm:text-[16px]"
+        >
+        Personal doctor
+        </div>
+        <div class="mt-[30px] sm:mt-[16px] sm:text-[14px]">
+          – I can give you tips on improving your health
+        </div>
+      </div>
+    </div>
+    <div
+      class="card flex cursor-pointer items-end justify-center overflow-hidden rounded-[36px] bg-[url(/optimized/p3.webp)] bg-contain text-center"
+      data-index="2"
+    >
+      <div
+        class="card-sublock w-full rounded-b-[24px] border-t border-white border-opacity-30 bg-[rgba(20,26,33,0.3)] p-4 backdrop-blur-[25.99388313293457px] transition-all sm:p-2"
+      >
+        <div class="text-[48px] sm:text-[24px]">Lana</div>
+        <div
+          class="mt-[12px] inline w-auto rounded-[100px] border border-white border-opacity-20 bg-[rgba(255,255,255,0.2)] px-4 py-2 text-[24px] text-[#B2BAC8] backdrop-blur-[12.5px] sm:px-2 sm:py-1 sm:text-[16px]"
+        >
+        Your best friend
+        </div>
+        <div class="mt-[30px] sm:mt-[16px] sm:text-[14px]">
+          – I could listen to your all stories 
+        </div>
+      </div>
+    </div>
+    <div
+      class="card flex cursor-pointer items-end justify-center overflow-hidden rounded-[36px] bg-[url(/optimized/p4.webp)] bg-contain text-center"
+      data-index="3"
+    >
+      <div
+        class="card-sublock w-full rounded-b-[24px] border-t border-white border-opacity-30 bg-[rgba(20,26,33,0.3)] p-4 backdrop-blur-[25.99388313293457px] transition-all sm:p-2"
+      >
+        <div class="text-[48px] sm:text-[24px]">Max</div>
+        <div
+          class="mt-[12px] inline w-auto rounded-[100px] border border-white border-opacity-20 bg-[rgba(255,255,255,0.2)] px-4 py-2 text-[24px] text-[#B2BAC8] backdrop-blur-[12.5px] sm:px-2 sm:py-1 sm:text-[16px]"
+        >
+          Gym trainer
+        </div>
+        <div class="mt-[30px] sm:mt-[16px] sm:text-[14px]">
+          – We can pump up your body together
+        </div>
+      </div>
+    </div>
+    <div
+      class="card flex cursor-pointer items-end justify-center overflow-hidden rounded-[36px] bg-[url(/optimized/p5.webp)] bg-contain text-center"
+      data-index="4"
+    >
+      <div
+        class="card-sublock w-full rounded-b-[24px] border-t border-white border-opacity-30 bg-[rgba(20,26,33,0.3)] p-4 backdrop-blur-[25.99388313293457px] transition-all sm:p-2"
+      >
+        <div class="text-[48px] sm:text-[24px]">Emilie</div>
+        <div
+          class="mt-[12px] inline w-auto rounded-[100px] border border-white border-opacity-20 bg-[rgba(255,255,255,0.2)] px-4 py-2 text-[24px] text-[#B2BAC8] backdrop-blur-[12.5px] sm:px-2 sm:py-1 sm:text-[16px]"
+        >
+          Stylist
+        </div>
+        <div class="mt-[30px] sm:mt-[16px] sm:text-[14px]">
+          – You’ll be the most stylish person with me
+        </div>
+      </div>
+    </div>
+    <div
+      class="card flex cursor-pointer items-end justify-center overflow-hidden rounded-[36px] bg-[url(/optimized/p6.webp)] bg-contain text-center"
+      data-index="5"
+    >
+      <div
+        class="card-sublock w-full rounded-b-[24px] border-t border-white border-opacity-30 bg-[rgba(20,26,33,0.3)] p-4 backdrop-blur-[25.99388313293457px] transition-all sm:p-2"
+      >
+        <div class="text-[48px] sm:text-[24px]">Milana</div>
+        <div
+          class="mt-[12px] inline w-auto rounded-[100px] border border-white border-opacity-20 bg-[rgba(255,255,255,0.2)] px-4 py-2 text-[24px] text-[#B2BAC8] backdrop-blur-[12.5px] sm:px-2 sm:py-1 sm:text-[16px]"
+        >
+        Trevel expert
+        </div>
+        <div class="mt-[30px] sm:mt-[16px] sm:text-[14px]">
+          – Let's  discuss the next country to visit?
+        </div>
+      </div>
+    </div>
+    <div
+      class="card flex cursor-pointer items-end justify-center overflow-hidden rounded-[36px] bg-[url(/optimized/p7.webp)] bg-contain text-center"
+      data-index="6"
+    >
+      <div
+        class="card-sublock w-full rounded-b-[24px] border-t border-white border-opacity-30 bg-[rgba(20,26,33,0.3)] p-4 backdrop-blur-[25.99388313293457px] transition-all sm:p-2"
+      >
+        <div class="text-[48px] sm:text-[24px]">Annete</div>
+        <div
+          class="mt-[12px] inline w-auto rounded-[100px] border border-white border-opacity-20 bg-[rgba(255,255,255,0.2)] px-4 py-2 text-[24px] text-[#B2BAC8] backdrop-blur-[12.5px] sm:px-2 sm:py-1 sm:text-[16px]"
+        >
+        Music expert
+        </div>
+        <div class="mt-[30px] sm:mt-[16px] sm:text-[14px]">
+          Let's discuss your favorite artist's new album
+        </div>
+      </div>
+    </div>
+    <div
+      class="card flex cursor-pointer items-end justify-center overflow-hidden rounded-[36px] bg-[url(/optimized/p8.webp)] bg-contain text-center"
+      data-index="7"
+    >
+      <div
+        class="card-sublock w-full rounded-b-[24px] border-t border-white border-opacity-30 bg-[rgba(20,26,33,0.3)] p-4 backdrop-blur-[25.99388313293457px] transition-all sm:p-2"
+      >
+        <div class="text-[48px] sm:text-[24px]">John</div>
+        <div
+          class="mt-[12px] inline w-auto rounded-[100px] border border-white border-opacity-20 bg-[rgba(255,255,255,0.2)] px-4 py-2 text-[24px] text-[#B2BAC8] backdrop-blur-[12.5px] sm:px-2 sm:py-1 sm:text-[16px]"
+        >
+        Business coach
+        </div>
+        <div class="mt-[30px] sm:mt-[16px] sm:text-[14px]">
+          – Have a business plan ready? Let's evaluate it!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="relative z-[5] mt-8 flex justify-center space-x-6 sm:mt-2">
+  <button
+    id="prev-btn"
+    class="flex items-center justify-center rounded-full bg-[#0D2C40] p-3 hover:opacity-65"
+  >
+    <img src="/right.svg" alt="" />
+  </button>
+  <button
+    id="next-btn"
+    class="flex items-center justify-center rounded-full bg-[#0D2C40] p-3 hover:opacity-65"
+  >
+    <img class="translate-x-1 rotate-180" src="/right.svg" alt="" />
+  </button>
+</div>
+<script>
+  import { animate } from "motion";
+  import swipeDetect from "swipe-detect";
+  const innerW = window.innerWidth;
+  const gap = 40; // gap between cards
+  const CARD_WIDTH = innerW < 500 ? 280 : 400; // small card width
+  const CARD_WIDTH_SCALED = innerW < 500 ? 350 : 500; // big card width
+  const FIRST_CARD = innerW / 2 - CARD_WIDTH_SCALED / 2;
+  const slider = document.querySelector("#slider");
+  const cards = document.querySelectorAll(".card");
+
+  if (slider) {
+    animate(slider, {
+      transform: [`translateX(${FIRST_CARD}px)`],
+    });
+  }
+  applyListeners();
+
+  if (innerW < 600) {
+    applySwipeControls();
+  }
+  /**
+   * Calculates the offset based on the given index and animates the slider.
+   *
+   * @param {number} index - The index for which to calculate the offset.
+   * @returns {void}
+   */
+  function calculateOffset(index) {
+    if (index === 0) {
+      const zero_index_width = innerW / 2 - CARD_WIDTH_SCALED / 2;
+      animate(slider, {
+        transform: [`translateX(${zero_index_width}px)`],
+      });
+    } else {
+      const indexed_width =
+        innerW / 2 - (CARD_WIDTH_SCALED / 2 + gap * index + CARD_WIDTH * index);
+      animate(slider, {
+        transform: [`translateX(${indexed_width}px)`],
+      });
+    }
+  }
+
+  /**
+   * Adds event listeners to the previous and next buttons, as well as the cards, to handle slider navigation.
+   *
+   * The function ensures that the slider navigates correctly based on user interactions with the buttons and cards.
+   * It also updates the active slider element and calculates the appropriate offset for the slider.
+   *
+   * @returns {void}
+   */
+  function applyListeners() {
+    const prevBtn = document.querySelector("#prev-btn");
+    const nextBtn = document.querySelector("#next-btn");
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener("click", function () {
+        const activeEl = document.querySelector(".active-slider");
+        if (activeEl) {
+          const index = activeEl.getAttribute("data-index");
+          if (index) {
+            const i = parseInt(index);
+            if (i === 0) return;
+            cards.forEach((c) => c.classList.remove("active-slider"));
+            const prev = document.querySelector(`.card[data-index="${i - 1}"]`);
+            prev?.classList.add("active-slider");
+            calculateOffset(i - 1); // go to prev el
+          }
+        }
+      });
+      nextBtn.addEventListener("click", function () {
+        const activeEl = document.querySelector(".active-slider");
+        if (activeEl) {
+          const index = activeEl.getAttribute("data-index");
+          if (index) {
+            const i = parseInt(index);
+            if (i === 7) return;
+            cards.forEach((c) => c.classList.remove("active-slider"));
+            const next = document.querySelector(`.card[data-index="${i + 1}"]`);
+            next?.classList.add("active-slider");
+            calculateOffset(i + 1); // go to next el
+          }
+        }
+      });
+    }
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        cards.forEach((c) => c.classList.remove("active-slider"));
+        card.classList.add("active-slider");
+        const indexStr = card.getAttribute("data-index");
+        const index = parseInt(indexStr);
+        calculateOffset(index);
+      });
+    });
+  }
+  /**
+   * Applies swipe controls to the slider.
+   * Detects swipe direction and navigates the slider accordingly.
+   */
+  function applySwipeControls() {
+    swipeDetect(
+      slider,
+      (d) => {
+        if (d === "left") {
+          const activeEl = document.querySelector(".active-slider");
+          if (activeEl) {
+            const index = activeEl.getAttribute("data-index");
+            if (index) {
+              const i = parseInt(index);
+              if (i === 7) return;
+              cards.forEach((c) => c.classList.remove("active-slider"));
+              const next = document.querySelector(
+                `.card[data-index="${i + 1}"]`,
+              );
+              next?.classList.add("active-slider");
+              calculateOffset(i + 1); // go to next el
+            }
+          }
+        } else {
+          const activeEl = document.querySelector(".active-slider");
+          if (activeEl) {
+            const index = activeEl.getAttribute("data-index");
+            if (index) {
+              const i = parseInt(index);
+              if (i === 0) return;
+              cards.forEach((c) => c.classList.remove("active-slider"));
+              const prev = document.querySelector(
+                `.card[data-index="${i - 1}"]`,
+              );
+              prev?.classList.add("active-slider");
+              calculateOffset(i - 1); // go to prev el
+            }
+          }
+        }
+      },
+      150,
+    );
+  }
+</script>
