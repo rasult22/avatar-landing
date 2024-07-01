@@ -41,6 +41,9 @@
           method: "eth_requestAccounts",
         });
         isMMConnected = true;
+        if (window.ethereum.selectedAddress) {
+          address = window.ethereum.selectedAddress
+        }
       } catch (error) {
         console.error(error);
       }
