@@ -4,7 +4,7 @@ import { Icon } from "astro-icon/components";
 import type { NavItem } from "~/types";
 import LangSelector from '~/components/lang-selector.svelte'
 import Login from '~/components/login.svelte'
-
+import LoginMetamask from '~/components/login-metamask.svelte'
 const navItems: Array<NavItem> = [
   { title: "Home", url: "#home" },
   { title: "About", url: "#about" },
@@ -89,7 +89,7 @@ const navItems: Array<NavItem> = [
       <LangSelector client:idle />
     </div>
     <div>
-      <Login client:idle />
+      <LoginMetamask client:only />
     </div>
   </div>
 </header>
