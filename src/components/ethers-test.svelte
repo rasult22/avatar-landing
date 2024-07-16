@@ -3,6 +3,7 @@
 	import LessonTwo from './lesson-two.svelte';
 	import LessonThree from './lesson-three.svelte';
 	import LessonFour from './lesson-four.svelte';
+	import LessonFive from './lesson-five.svelte';
 </script>
 <!-- Reading Balance -->
 <!-- <LessonOne /> -->
@@ -14,4 +15,6 @@
 <!-- <LessonThree /> -->
 
 <!-- Writing to a contract (transfering tokens inside contract) -->
-<LessonFour />
+<!-- <LessonFour /> -->
+
+<LessonFive />
