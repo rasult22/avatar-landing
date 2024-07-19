@@ -2,7 +2,7 @@
   import { ethers } from "ethers";
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  const BACKEND_URL = 'http://ec2-13-51-195-213.eu-north-1.compute.amazonaws.com:8000'
+  const BACKEND_URL = 'https://ec2-13-51-195-213.eu-north-1.compute.amazonaws.com:8000'
   const CONTRACT_ADDRESS = '0x741787F17fAE97F55Ce79382822bba2101d3C77B'
   let accounts = [];
   let isMMInstalled = false;
