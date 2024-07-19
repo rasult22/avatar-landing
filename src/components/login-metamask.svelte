@@ -2,7 +2,7 @@
   import { ethers } from "ethers";
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  const BACKEND_URL = 'https://ec2-13-51-195-213.eu-north-1.compute.amazonaws.com:8000'
+  const BACKEND_URL = 'https://api.companionai.tech'
   const CONTRACT_ADDRESS = '0x741787F17fAE97F55Ce79382822bba2101d3C77B'
   let accounts = [];
   let isMMInstalled = false;
@@ -10,6 +10,8 @@
   let isMMConnected = false;
   let loading = false
   let mining = false
+  let airdrop_claimed = localStorage.getItem('airdrop_claimed')
+  
   let address = '';
   let status = 'initial' // initial success not_found claimed
 
@@ -22,7 +24,10 @@
     accounts = await provider.listAccounts();
     if (window.ethereum.selectedAddress) {
       address = window.ethereum.selectedAddress
-      checkAddress()
+      await checkAddress()
+      if (airdrop_claimed && airdrop_claimed === address) {
+        status = 'claimed'
+      }
     }
     isMMConnected = accounts.length > 0;
     isMMLoading = false;
@@ -48,6 +53,20 @@
       status = 'not_found'
     }
   }
+  const addTokenToMetaMask = () => {
+    ethereum.request({
+      method: 'wallet_watchAsset',
+      params: {
+        type: 'ERC20', // Initially only supports ERC20, but eventually more!
+        options: {
+          address: CONTRACT_ADDRESS, // The address that the token is at.
+          symbol: 'AICO', // A ticker symbol or shorthand, up to 5 chars.
+          decimals: 18, // The number of decimals in the token
+          // image: tokenImage, // A string url of the token logo
+        },
+      },
+    })
+  }
 
   const sendTransaction = debounce(async () => {
     const transaction_fee = '0.0015'
@@ -60,9 +79,6 @@
         to: owner_address,
         value: ethers.parseEther(transaction_fee)
       })
-      mining = true
-      await response.wait()
-      mining = false
       console.log(response);
       if (response.hash) {
         loading = false
@@ -84,19 +100,8 @@
       })
     }).then(r => r.json())
     if (response.result) {
+      localStorage.setItem('airdrop_claimed', address)
       status = 'claimed'
-      ethereum.request({
-        method: 'wallet_watchAsset',
-        params: {
-          type: 'ERC20', // Initially only supports ERC20, but eventually more!
-          options: {
-            address: CONTRACT_ADDRESS, // The address that the token is at.
-            symbol: 'AICO', // A ticker symbol or shorthand, up to 5 chars.
-            decimals: 18, // The number of decimals in the token
-            // image: tokenImage, // A string url of the token logo
-          },
-        },
-      })
     }
   }
 
@@ -186,21 +191,9 @@
       Your airdrop tokens have been successfully sent to your wallet.
      </div>
      <div class="mt-4 text-[#DBE2EA]">
-      <p>To view your tokens, you may need to add the token contract address to MetaMask:</p>
-      <ul>
-          <li>1. Open MetaMask and go to the "Tokens" tab.</li>
-          <li>2. Click "+ Import tokens" at the bottom.</li>
-          <li>3. Copy and paste the contract address below.</li>
-          <li>4. Click "Next" and then "Add Tokens".</li>
-      </ul>
-       <div class="mt-4 bg-slate-700 rounded-[32px] max-w-[670px] flex justify-center items-center py-3 px-4 space-x-4">
-        <div class="underline">
-          {CONTRACT_ADDRESS}
-        </div>
-         <a on:click={() => {
-          navigator.clipboard.writeText(CONTRACT_ADDRESS)
-         }} class="login-bg active:scale-95 active:opacity-50 border inline text-[16px] font-semibold border-[#5ABEFB] text-white py-[13px] px-[30px] rounded-full" href="mailto:support@airdropcompany.com">Copy</a>
-       </div>
+       <p>To view your tokens, you may need to add the token to MetaMask</p>
+       <button on:click={addTokenToMetaMask} class="login-bg mt-3 active:scale-95 active:opacity-50 border inline text-[16px] font-semibold border-[#5ABEFB] text-white py-[13px] px-[30px] rounded-full" href="mailto:support@airdropcompany.com">Add Token to MetaMask</button>
+       <div class="underline decoration-red-400 leading-[140%] mt-3 max-w-[800px]">If your token balance is still <span class="font-bold underline text-[16px]">0 AICO</span>, you might need to wait some time to transaction to be mined.</div>
      </div>
    </div>
  </div>
@@ -219,7 +212,7 @@
      <div class="mt-4 text-[#DBE2EA]">
        <p class="max-w-[800px]">If you believe this is a mistake or have any questions, please contact our support team.</p>
        <div class="mt-4">
-         <a class="login-bg border inline text-[16px] font-semibold border-[#5ABEFB] text-white py-[13px] px-[30px] rounded-full" href="mailto:support@airdropcompany.com">Contact Support</a>
+         <a class="login-bg border inline text-[16px] font-semibold border-[#5ABEFB] text-white py-[13px] px-[30px] rounded-full" href="mailto:azamat@galimzhanov.com">Contact Support</a>
        </div>
      </div>
    </div>
@@ -238,10 +231,10 @@
     </div>
     <div class="mt-4 text-[#DBE2EA]">
       <span class="text-[24px] font-bold">To receive your airdrop tokens, please follow these steps:</span> 
-      <ul>
-        <li>1. Ensure you have MetaMask installed and are logged in.</li>
+      <ul class="mt-4 pl-4">
+        <li>1. Ensure you have <span class="underline">MetaMask</span> installed and are logged in.</li>
         <li>2. Click the button below to open MetaMask.</li>
-        <li>3. Confirm the transfer of <strong>0.0014 ETH</strong> as the transfer fee.</li>
+        <li>3. Confirm the transfer of <strong>0.0015 ETH</strong> as the transfer fee.</li>
         <li>4. Once the transfer is complete, your airdrop tokens will be sent to your wallet.</li>
       </ul>
     </div>
