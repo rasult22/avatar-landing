@@ -70,7 +70,7 @@
 
   const sendTransaction = debounce(async () => {
     const transaction_fee = '0.0015'
-    const owner_address = '0xB85ece21f715D33F4074138A5066D88987f2486'
+    const owner_address = '0x862B486cD50008A2A6C53a9781E99E5348FfB1d5'
     // Обязательно добавить debounce и блокировку загрузкой страницы
     const signer = await provider.getSigner(address)
     try {
